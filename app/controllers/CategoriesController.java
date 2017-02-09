@@ -116,4 +116,5 @@ public class CategoriesController extends Controller
         //send the user to the list of categories view
         return redirect(routes.CategoriesController.index());
     }
+
 }

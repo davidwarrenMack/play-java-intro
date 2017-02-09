@@ -22,6 +22,10 @@ public class Employees
     @Column (name = "title")
     public String employeeTitle;
 
+    @OneToOne(optional=true)
+    @JoinColumn(name = "reportsTo")
+    public Employees manager;
+
 
 }
 
