@@ -10,7 +10,6 @@ public class Categories
     @Column(name = "categoryId")
     public Long categoryId;
 
-
     @Column (name = "categoryName")
     public String categoryName;
 

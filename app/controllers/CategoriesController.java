@@ -27,7 +27,7 @@ public class CategoriesController extends Controller
     public Result getCategories()
     {
         List<Categories> categories = (List<Categories>) jpaApi.em().
-                createQuery("select categoryId, categoryName from Categories").getResultList();
+                createQuery("select categoryId, categoryName, description, picture from Categories").getResultList();
 
         return ok(toJson(categories));
     }
