@@ -15,8 +15,8 @@ th{
 
 body {
     background-image: url("");
-    opacity: 0.50;
-                 filter: alpha(opacity=55);
+        opacity: 0.5;
+                 filter: alpha(opacity=50);
 }
 
 

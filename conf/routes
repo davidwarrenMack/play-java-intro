@@ -28,3 +28,8 @@ GET     /employeePicture/:id        controllers.EmployeesController.getPicture(i
 GET     /editEmployee/:id           controllers.EmployeesController.editEmployee(id:Long)
 POST    /updateEmployee             controllers.EmployeesController.updateEmployee
 
+# Orders page
+GET     /orders                     controllers.OrdersController.getOrders()
+GET     /ordersList                 controllers.OrdersController.index()
+
+

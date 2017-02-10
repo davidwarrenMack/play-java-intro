@@ -1,0 +1,38 @@
+@(orders: List[Orders])
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type ="text/css" href="@routes.Assets.at("stylesheets/main.css")"/>
+</head>
+<body>
+
+<h1>List Of Orders</h1>
+
+<table>
+    <tr>
+        <a href="url"><iframe width="1200" height="500" src="https://www.youtube.com/embed/Sagg08DrO5U?ecver=1" frameborder="0" allowfullscreen></iframe></a>
+        <th>Order Id</th>
+        <th>Employee Id</th>
+        <th>Customer Id</th>
+        <th>Freight</th>
+        <th>Ship City</th>
+        <th>Ship Country</th>
+    </tr>
+    @for(order <- orders) {
+    <tr>
+        <td>@order.orderId</td>
+        <td>@order.employeeId</td>
+        <td>@order.customerId</td>
+        <td>@order.freight</td>
+        <td>@order.shipCity</td>
+        <td>@order.shipCountry</td>
+
+    </tr>
+    }
+</table>
+
+
+</body>
+</html>
