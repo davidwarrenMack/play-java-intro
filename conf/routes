@@ -3,12 +3,15 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.PersonController.index()
+GET     /indexpersons               controllers.PersonController.index()
 POST    /person                     controllers.PersonController.addPerson()
 GET     /persons                    controllers.PersonController.getPersons
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# API demo
+GET     /APIDemo                    controllers.APIDemoController.getDemo()
 
 # Categories page
 GET     /categories                 controllers.CategoriesController.getCategories()
@@ -31,5 +34,8 @@ POST    /updateEmployee             controllers.EmployeesController.updateEmploy
 # Orders page
 GET     /orders                     controllers.OrdersController.getOrders()
 GET     /ordersList                 controllers.OrdersController.index()
+
+GET     /ordersO                    controllers.OrdersController.indexOfStuff
+GET     /ordersOList                controllers.OrdersController.indexOfStuff()
 
 
