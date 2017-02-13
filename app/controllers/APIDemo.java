@@ -3,6 +3,7 @@ package controllers;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import models.JobSearch;
+import models.LatinCrud;
 import models.Location;
 import play.Logger;
 import play.mvc.Controller;
@@ -117,5 +118,36 @@ public class APIDemo extends Controller
         }
 
         return ok(views.html.jobsearch.render(jobSearch));
+    }
+    public Result getDemoPojoTreeTrunk()
+    {
+
+        LatinCrud latinCrud = null;
+        // Connect to the URL using java's native library
+        try
+        {
+            //The web service I am calling
+            String myURL = "http://jsonplaceholder.typicode.com/posts/1";
+            //String myURL = "invalid url"; //just a string
+            //Turn the string into a URL
+            URL url = new URL(myURL);
+
+            //Get the request setup
+            HttpURLConnection request = (HttpURLConnection) url.openConnection();
+            //Make the actual call to the web service
+            request.connect();
+
+            //We need to take the data coming back and put it into
+            //some data structure we can deal with
+            //Use a generic tree structure here
+            ObjectMapper objectMapper = new ObjectMapper();
+            latinCrud = objectMapper.readerFor(LatinCrud.class).readValue(url);
+        }
+        catch (Exception e)
+        {
+            Logger.error("oh no! got some exception: " + e.getMessage());
+        }
+
+        return ok(views.html.latincrud.render(latinCrud));
     }
 }
