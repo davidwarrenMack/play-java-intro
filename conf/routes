@@ -11,7 +11,9 @@ GET     /persons                    controllers.PersonController.getPersons
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # API demo
-GET     /APIDemo                    controllers.APIDemoController.getDemo()
+GET     /APIDemo                    controllers.APIDemo.getDemo()
+GET     /pojo                       controllers.APIDemo.getDemoPojo()
+GET     /pojoTree                   controllers.APIDemo.getDemoPojoTree()
 
 # Categories page
 GET     /categories                 controllers.CategoriesController.getCategories()
